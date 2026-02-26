@@ -17,7 +17,7 @@
           {% for t in item.tags %}<span class="tag">{{ t }}</span>{% endfor %}
         </div>
         <div class="actions">
-          <a class="btn" href="{{ item.url }}">View</a>
+          <a class="btn" href="{{ item.url | url }}">View</a>
           {% if item.website %}<a class="btn secondary" href="{{ item.website }}">Website</a>{% endif %}
         </div>
       </div>

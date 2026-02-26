@@ -31,3 +31,13 @@ Open: http://localhost:8080
 - Projects: `src/content/projects/*.json`
 - Tools: `src/content/tools/*.json` (includes `assessment` object)
 - Datasets: `src/content/datasets/*.json` (includes `assessment` object)
+
+
+## Troubleshooting: blank page / missing CSS on GitHub Pages
+GitHub Pages serves project sites under a subpath like:
+`https://USER.github.io/REPO/`
+
+If your site uses absolute paths like `/assets/...`, they will 404.
+This starter sets `ELEVENTY_PATH_PREFIX` during the GitHub Actions build, and uses `| url` in templates so links work under `/REPO/`.
+
+If you fork/rename the repo, just redeploy — the workflow uses the repo name automatically.
