@@ -1,0 +1,39 @@
+{
+  "slug": "example-tool",
+  "title": "Example Tool",
+  "one_liner": "A demo tool card with a structured ETA-style assessment panel.",
+  "tags": [
+    "tooling",
+    "demo"
+  ],
+  "org": "Example Org",
+  "repo": "https://github.com/example/example-tool",
+  "website": "https://example.com",
+  "license": "Apache-2.0",
+  "updated": "2026-02-20",
+  "assessment": {
+    "name": "ETA (Example Technology Assessment)",
+    "score": "3.8/5",
+    "confidence": "Medium",
+    "reviewed": "2026-02-25",
+    "dimensions": [
+      {
+        "name": "Field relevance",
+        "score": 4
+      },
+      {
+        "name": "Interoperability",
+        "score": 3
+      },
+      {
+        "name": "Stewardship",
+        "score": 4
+      }
+    ],
+    "flags": [
+      "Needs security review",
+      "Docs incomplete"
+    ]
+  },
+  "notes": "Use the Admin UI to edit this tool without touching code."
+}

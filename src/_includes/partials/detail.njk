@@ -1,0 +1,64 @@
+{% layout "layouts/base.njk" %}
+{% set title = item.title %}
+{% block content %}
+  <div class="page-title">
+    <h1>{{ item.title }}</h1>
+    <div class="subtle">{{ item.one_liner }}</div>
+  </div>
+
+  <div class="meta">
+    {% for t in item.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+  </div>
+
+  <div class="panel">
+    <div class="kv">
+      {% if item.org %}<div class="k">Organization</div><div class="v">{{ item.org }}</div>{% endif %}
+      {% if item.maintainer %}<div class="k">Maintainer</div><div class="v">{{ item.maintainer }}</div>{% endif %}
+      {% if item.license %}<div class="k">License</div><div class="v">{{ item.license }}</div>{% endif %}
+      {% if item.updated %}<div class="k">Last updated</div><div class="v">{{ item.updated }}</div>{% endif %}
+      {% if item.website %}<div class="k">Website</div><div class="v"><a href="{{ item.website }}">{{ item.website }}</a></div>{% endif %}
+      {% if item.repo %}<div class="k">Repo</div><div class="v"><a href="{{ item.repo }}">{{ item.repo }}</a></div>{% endif %}
+    </div>
+  </div>
+
+  {% if item.assessment %}
+  <div class="hr"></div>
+  <div class="panel">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;">
+      <div style="min-width:260px;">
+        <h2 style="margin:0;">{{ item.assessment.name }}</h2>
+        <div class="subtle small">Score: <strong>{{ item.assessment.score }}</strong> · Confidence: <strong>{{ item.assessment.confidence }}</strong> · Reviewed: {{ item.assessment.reviewed }}</div>
+
+        {% if item.assessment.flags and item.assessment.flags.length %}
+          <div class="hr"></div>
+          <div class="subtle small" style="margin-bottom:6px;">Flags</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            {% for f in item.assessment.flags %}
+              <span class="tag">{{ f }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div style="min-width:260px; flex:1;">
+        {% for dim in item.assessment.dimensions %}
+          <div class="small" style="display:flex;justify-content:space-between;gap:10px;">
+            <span class="subtle">{{ dim.name }}</span><span><strong>{{ dim.score }}</strong>/5</span>
+          </div>
+          <div class="meter" style="margin:6px 0 10px; border:1px solid var(--line); border-radius:999px; overflow:hidden; background:rgba(0,0,0,.03);">
+            <div class="bar" style="width:{{ (dim.score/5*100) | round }}%; height:10px; border-radius:999px; background:var(--forest);"></div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if item.notes %}
+    <div class="hr"></div>
+    <div class="panel">
+      <h2 style="margin:0 0 8px;">Notes</h2>
+      <div class="small subtle">{{ item.notes | safe }}</div>
+    </div>
+  {% endif %}
+{% endblock %}

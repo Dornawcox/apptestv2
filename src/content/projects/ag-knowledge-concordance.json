@@ -1,0 +1,14 @@
+{
+  "slug": "ag-knowledge-concordance",
+  "title": "Ag Knowledge Concordance",
+  "one_liner": "A living atlas + library to make agricultural knowledge durable and reusable.",
+  "tags": [
+    "knowledge",
+    "interoperability",
+    "stewardship"
+  ],
+  "org": "OpenTEAM community",
+  "updated": "2026-02-25",
+  "website": "https://agricultural-knowledge-concordance.github.io/Ag-Knowledge-Concordance/",
+  "notes": "Prototype project entry. Replace with your real sources."
+}

@@ -1,0 +1,43 @@
+---
+permalink: /
+---
+{% layout "layouts/base.njk" %}
+{% set title = "OpenTEAM Demo" %}
+{% block content %}
+  <div class="page-title">
+    <h1>Data-driven cards, GitHub-friendly</h1>
+    <div class="subtle">Static site generated from JSON, editable via an admin UI that commits to GitHub.</div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Projects</h3>
+      <p class="subtle small">Grid + detail pages generated from <code>src/content/projects/*.json</code>.</p>
+      <div class="actions"><a class="btn" href="/projects/">Browse projects</a></div>
+    </div>
+    <div class="card">
+      <h3>Tools</h3>
+      <p class="subtle small">Includes a lightweight “ETA-style” assessment panel built from structured fields.</p>
+      <div class="actions"><a class="btn" href="/tools/">Browse tools</a></div>
+    </div>
+    <div class="card">
+      <h3>Datasets</h3>
+      <p class="subtle small">Includes a lightweight “DTAP-style” assessment panel built from structured fields.</p>
+      <div class="actions"><a class="btn" href="/datasets/">Browse datasets</a></div>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="panel">
+    <h2 style="margin:0 0 8px;">How it works</h2>
+    <ol class="small subtle" style="margin:0; padding-left:18px;">
+      <li>Content lives in JSON files in the repo.</li>
+      <li>Eleventy builds static pages (fast + low maintenance).</li>
+      <li>Decap CMS provides an admin editor that creates commits/PRs in GitHub.</li>
+      <li>GitHub Actions deploys to GitHub Pages on every merge to <code>main</code>.</li>
+    </ol>
+  </div>
+{% endblock %}

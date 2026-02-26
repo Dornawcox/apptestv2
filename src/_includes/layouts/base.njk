@@ -1,0 +1,42 @@
+{% set title = title or "OpenTEAM Library (Demo)" %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0;">
+      <a class="brand" href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+        <div style="width:34px;height:34px;border-radius:10px;background:var(--forest);"></div>
+        <div>
+          <div style="font-weight:800;color:var(--ink);line-height:1;">OpenTEAM</div>
+          <div class="subtle small" style="line-height:1.1;">Card Library Demo</div>
+        </div>
+      </a>
+      <nav class="nav" style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a class="btn secondary" href="/projects/">Projects</a>
+        <a class="btn secondary" href="/tools/">Tools</a>
+        <a class="btn secondary" href="/datasets/">Datasets</a>
+        <a class="btn secondary" href="/admin/">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="wrap">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+
+  <footer class="footer" style="border-top:1px solid var(--line); padding:18px 0; background:var(--forest); color:#fff;">
+    <div class="wrap" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+      <div><strong>OpenTEAM</strong> · Demo Option 1 (GitHub-native CMS)</div>
+      <div class="small" style="opacity:.9;">Edit content via <a href="/admin/" style="color:#fff;text-decoration:underline;">/admin</a></div>
+    </div>
+  </footer>
+</body>
+</html>

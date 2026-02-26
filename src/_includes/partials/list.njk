@@ -1,0 +1,26 @@
+{% layout "layouts/base.njk" %}
+{% set title = pageTitle %}
+{% block content %}
+  <div class="page-title">
+    <h1>{{ pageTitle }}</h1>
+    <div class="subtle">{{ pageSubtitle }}</div>
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="grid">
+    {% for item in items %}
+      <div class="card">
+        <h3>{{ item.title }}</h3>
+        <div class="subtle small">{{ item.one_liner }}</div>
+        <div class="meta">
+          {% for t in item.tags %}<span class="tag">{{ t }}</span>{% endfor %}
+        </div>
+        <div class="actions">
+          <a class="btn" href="{{ item.url }}">View</a>
+          {% if item.website %}<a class="btn secondary" href="{{ item.website }}">Website</a>{% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

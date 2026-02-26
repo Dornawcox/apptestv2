@@ -1,0 +1,98 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USER/YOUR_REPO
+  branch: main
+
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "src/content/projects"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { name: "slug", label: "Slug", widget: "string" }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "one_liner", label: "One-liner", widget: "string" }
+      - { name: "tags", label: "Tags", widget: "list", default: [] }
+      - { name: "org", label: "Organization", widget: "string", required: false }
+      - { name: "website", label: "Website", widget: "string", required: false }
+      - { name: "updated", label: "Last updated (YYYY-MM-DD)", widget: "string", required: false }
+      - { name: "notes", label: "Notes", widget: "markdown", required: false }
+
+  - name: "tools"
+    label: "Tools"
+    folder: "src/content/tools"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { name: "slug", label: "Slug", widget: "string" }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "one_liner", label: "One-liner", widget: "string" }
+      - { name: "tags", label: "Tags", widget: "list", default: [] }
+      - { name: "org", label: "Organization", widget: "string", required: false }
+      - { name: "website", label: "Website", widget: "string", required: false }
+      - { name: "repo", label: "Repo URL", widget: "string", required: false }
+      - { name: "license", label: "License", widget: "string", required: false }
+      - { name: "updated", label: "Last updated (YYYY-MM-DD)", widget: "string", required: false }
+      - name: "assessment"
+        label: "Assessment (ETA)"
+        widget: "object"
+        required: false
+        fields:
+          - { name: "name", label: "Assessment name", widget: "string", required: false }
+          - { name: "score", label: "Score (display)", widget: "string", required: false }
+          - { name: "confidence", label: "Confidence", widget: "select", options: ["Low","Medium","High"], required: false }
+          - { name: "reviewed", label: "Reviewed date", widget: "string", required: false }
+          - name: "dimensions"
+            label: "Dimensions"
+            widget: "list"
+            required: false
+            fields:
+              - { name: "name", label: "Name", widget: "string" }
+              - { name: "score", label: "Score (1-5)", widget: "number", value_type: "int", min: 1, max: 5 }
+          - { name: "flags", label: "Flags", widget: "list", required: false, default: [] }
+      - { name: "notes", label: "Notes", widget: "markdown", required: false }
+
+  - name: "datasets"
+    label: "Datasets"
+    folder: "src/content/datasets"
+    create: true
+    extension: "json"
+    format: "json"
+    slug: "{{slug}}"
+    fields:
+      - { name: "slug", label: "Slug", widget: "string" }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "one_liner", label: "One-liner", widget: "string" }
+      - { name: "tags", label: "Tags", widget: "list", default: [] }
+      - { name: "org", label: "Organization", widget: "string", required: false }
+      - { name: "website", label: "Website", widget: "string", required: false }
+      - { name: "license", label: "License", widget: "string", required: false }
+      - { name: "updated", label: "Last updated (YYYY-MM-DD)", widget: "string", required: false }
+      - name: "assessment"
+        label: "Assessment (DTAP)"
+        widget: "object"
+        required: false
+        fields:
+          - { name: "name", label: "Assessment name", widget: "string", required: false }
+          - { name: "score", label: "Score (display)", widget: "string", required: false }
+          - { name: "confidence", label: "Confidence", widget: "select", options: ["Low","Medium","High"], required: false }
+          - { name: "reviewed", label: "Reviewed date", widget: "string", required: false }
+          - name: "dimensions"
+            label: "Dimensions"
+            widget: "list"
+            required: false
+            fields:
+              - { name: "name", label: "Name", widget: "string" }
+              - { name: "score", label: "Score (1-5)", widget: "number", value_type: "int", min: 1, max: 5 }
+          - { name: "flags", label: "Flags", widget: "list", required: false, default: [] }
+      - { name: "notes", label: "Notes", widget: "markdown", required: false }

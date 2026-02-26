@@ -1,0 +1,37 @@
+{
+  "slug": "example-dataset",
+  "title": "Example Dataset",
+  "one_liner": "A demo dataset card with a structured DTAP-style assessment panel.",
+  "tags": [
+    "dataset",
+    "demo"
+  ],
+  "org": "Example Org",
+  "website": "https://example.com/dataset",
+  "license": "CC-BY-4.0",
+  "updated": "2026-01-30",
+  "assessment": {
+    "name": "DTAP (Data Trust & Access Profile)",
+    "score": "4.1/5",
+    "confidence": "High",
+    "reviewed": "2026-02-25",
+    "dimensions": [
+      {
+        "name": "Documentation",
+        "score": 4
+      },
+      {
+        "name": "Access",
+        "score": 5
+      },
+      {
+        "name": "Provenance",
+        "score": 4
+      }
+    ],
+    "flags": [
+      "PII risk: Unknown"
+    ]
+  },
+  "notes": "Prototype dataset entry. Add your real DTAP fields as needed."
+}

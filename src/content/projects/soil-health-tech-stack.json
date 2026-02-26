@@ -1,0 +1,14 @@
+{
+  "slug": "soil-health-tech-stack",
+  "title": "Soil Health Tech Stack",
+  "one_liner": "A reference stack to support soil health measurement, data exchange, and decision support.",
+  "tags": [
+    "soil",
+    "data",
+    "reference-stack"
+  ],
+  "org": "Farm Foundation",
+  "updated": "2026-02-25",
+  "website": "",
+  "notes": "Prototype project entry."
+}
